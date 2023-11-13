@@ -1,0 +1,276 @@
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>EngrHire BD</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="/work.css" rel="stylesheet" />
+
+    <style>
+
+      body { font-family: Arial, sans-serif; margin: 0; background-color:
+      #f4f4f4; display: flex; } .toggle-btn { cursor: pointer; display: none;
+      flex-direction: column; align-items: center; gap: 4px; font-size: 20px; }
+      .bar { background-color: #fff; height: 3px; width: 20px; } .nav-list {
+      list-style-type: none; padding: 0; margin: 0; transition: opacity 0.2s; }
+      .nav-list li { padding: 10px; } .sidebar.collapsed { width: 80px; }
+      .sidebar.collapsed .toggle-btn { display: flex; } .sidebar.collapsed
+      .nav-list { opacity: 0; } .sidebar { margin-top: 120px; width: 250px;
+      background-color: #3498db; /* Updated sidebar color */ color: #fff; /*
+      Ensures text is white */ transition: width 0.3s; overflow: hidden;
+      display: flex; flex-direction: column; /* ...other existing styles for
+      sidebar... */ } .sidebar-header { display: flex; align-items: center;
+      justify-content: space-between; padding: 20px; background-color: #2980b9;
+      /* Slightly darker shade for header */ color: #fff; cursor: pointer; /*
+      ...other existing styles for sidebar-header... */ } /* ...other existing
+      styles... */ /* Updating nav links color for better visibility */
+      .nav-list li a { color: #fff; /* Set text color to white for links */
+      text-decoration: none; /* Optional: Removes underline from links */
+      display: block; padding: 10px 20px; /* Optional: Adds padding to the links
+      for better touch targets */ } .nav-list li a:hover { background-color:
+      #2980b9; /* Optional: Adds a hover effect for the links */ } .content
+      {margin-top: 120px; flex-grow: 1; padding: 20px; transition: margin-left
+      0.3s; } /* Cards styling */ .info-card { background: #fff; border-radius:
+      8px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); margin-bottom: 20px; padding:
+      20px; transition: transform 0.3s ease-in-out; } .info-card:hover {
+      transform: translateY(-5px); } /* Responsive layout for sidebar and
+      content */ @media (max-width: 768px) { .sidebar { position: fixed; height:
+      100%; z-index: 10; } .content { margin-left: 80px; } .sidebar.collapsed {
+      width: 0; } .sidebar.collapsed + .content { margin-left: 0; }
+      .sidebar.collapsed .nav-list { display: none; } .toggle-btn { display:
+      flex; } }
+
+    </style>
+  </head>
+
+  <body>
+
+
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h2>Work Dashboard</h2>
+        <div class="toggle-btn" id="sidebar-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="#client-info">Client Info</a></li>
+        <li><a href="#engineer-info">Engineer Info</a></li>
+        <li><a href="#job-info">Job Info</a></li>
+        <li><a href="#bid-info">Bid Info</a></li>
+        <li><a href="#messages">Messages</a></li>
+        <li><a href="#payments">Payments</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+
+    <section id="client-info" class="info-card">
+  <h2>Client Information</h2>
+  <div class="card-content">
+    <p>Full Name: {{client.full_name}}</p>
+    <p>Email: {{client.email}}</p>
+    <p>Contact Mobile: {{client.contact_mobile}}</p>
+    <p>Website: {{client.website}}</p>
+    <!-- Add more client information fields here -->
+  </div>
+</section>
+
+<section id="engineer-info" class="info-card">
+  <h2>Engineer Information</h2>
+  <div class="card-content">
+    <p>Full Name: {{engineer.full_name}}</p>
+    <p>Email: {{engineer.email}}</p>
+    <p>Designation: {{engineer.designation}}</p>
+    <p>Field of Expertise: {{engineer.field_of_expertise}}</p>
+    <!-- Add more engineer information fields here -->
+  </div>
+</section>
+
+<section id="job-info" class "info-card">
+  <h2>Job Information</h2>
+  <div class="card-content">
+    <p>Job Title: {{job.jobTitle}}</p>
+    <p>Category: {{job.category}}</p>
+    <p>Job Details: {{job.jobDetails}}</p>
+    <p>Job Requirements: {{job.jobRequirements}}</p>
+    <!-- Add more job information fields here -->
+  </div>
+</section>
+
+<section id="bid-info" class="info-card">
+  <h2>Bid Information</h2>
+  <div class="card-content">
+    <p>Bid Amount: ${{bid.bidAmount}}</p>
+    <p>Status: {{bid.status}}</p>
+    <!-- Add more bid information fields here -->
+  </div>
+</section>
+
+<section id="messages" class="info-card">
+      <h1 class="title">iChat 💬</h1>
+      <div class="main">
+        <div class="name">
+          <span><i class="far fa-user"></i></span>
+          <input
+            type="text"
+            id="name-input"
+            class="name-input"
+            value="anonymous"
+            maxlength="20"
+          />
+        </div>
+
+        <ul class="message-container" id="message-container">
+          <!-- Messages will be added here dynamically -->
+        </ul>
+
+        <form class="message-form" id="message-form">
+          <input
+            type="text"
+            name="message"
+            id="message-input"
+            class="message-input"
+          />
+          <div class="v-divider"></div>
+          <button type="submit" class="send-button">
+            send
+            <span><i class="fas fa-paper-plane"></i></span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"></script>
+
+
+    </div>
+
+    <script>
+
+     // Get all the navigation links
+const navLinks = document.querySelectorAll('.nav-list a');
+
+// Get all content sections
+const contentSections = document.querySelectorAll('.content section');
+
+// Hide all content sections except the first one
+contentSections.forEach((section, index) => {
+  if (index > 0) {
+    section.style.display = 'none';
+  }
+});
+
+// Add click event listeners to navigation links
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // Hide all content sections
+    contentSections.forEach(section => {
+      section.style.display = 'none';
+    });
+
+    // Show the corresponding content section based on the link's href attribute
+    const activeSection = document.querySelector(link.getAttribute('href'));
+    if (activeSection) {
+      activeSection.style.display = 'block';
+    }
+  });
+});
+
+    </script>
+
+   <!-- Add this script tag to your HTML -->
+<script>
+  const isEngineer = true;
+  // Initialize Socket.io client
+  const socket = io();
+
+  // Function to send a chat message
+  function sendMessage() {
+    const messageInput = document.getElementById('message-input');
+    const message = messageInput.value.trim();
+
+    if (message !== '') {
+      // Replace 'engineerId' and 'clientId' with actual IDs or other identifiers
+      const sender = isEngineer ? engineerId : clientId;
+
+      // Replace 'workId' with the actual ID of the current work/job
+      const workId = 'workId'; // Get the work ID from your HTML or JavaScript
+
+      // Emit the chat message to the server
+      socket.emit('chatMessage', { sender, message, workId });
+
+      // Clear the input field
+      messageInput.value = '';
+    }
+  }
+
+  // Function to display received chat messages
+  function displayMessage(message) {
+    const messageContainer = document.getElementById('message-container');
+    const messageItem = document.createElement('li');
+    const senderName = message.sender === engineerId ? 'Engineer' : 'Client';
+    const formattedTimestamp = moment(message.timestamp).format('LT'); // Format timestamp
+
+    messageItem.innerHTML = `<span class="sender-name">${senderName}</span> (${formattedTimestamp}): ${message.message}`;
+    messageContainer.appendChild(messageItem);
+  }
+
+  // Handle received messages from the server
+  socket.on('message', (message) => {
+    displayMessage(message);
+  });
+
+  // Handle form submission to send a message
+  const messageForm = document.getElementById('message-form');
+  messageForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    sendMessage();
+  });
+</script>
+
+
+
+  
+
+
+  </body>
+</html>
